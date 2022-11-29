@@ -16,7 +16,7 @@ func (k msgServer) Commitment(goCtx context.Context, msg *types.MsgCommitment) (
 		return nil, err
 	}
 
-	toA, err := sdk.AccAddressFromBech32(msg.ToTimelockAddr)
+	toA, err := sdk.AccAddressFromBech32(msg.ToHashlock)
 	if err != nil {
 		return nil, err
 	}
