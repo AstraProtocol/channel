@@ -21,20 +21,20 @@ const baseChannel: object = {
 
 export const Channel = {
   encode(message: Channel, writer: Writer = Writer.create()): Writer {
-    if (message.index !== "") {
-      writer.uint32(10).string(message.index);
+    if (message.Index !== "") {
+      writer.uint32(10).string(message.Index);
     }
-    if (message.multisigAddr !== "") {
-      writer.uint32(18).string(message.multisigAddr);
+    if (message.MultisigAddr !== "") {
+      writer.uint32(18).string(message.MultisigAddr);
     }
-    if (message.partA !== "") {
-      writer.uint32(26).string(message.partA);
+    if (message.PartA !== "") {
+      writer.uint32(26).string(message.PartA);
     }
-    if (message.partB !== "") {
-      writer.uint32(34).string(message.partB);
+    if (message.PartB !== "") {
+      writer.uint32(34).string(message.PartB);
     }
-    if (message.denom !== "") {
-      writer.uint32(42).string(message.denom);
+    if (message.Denom !== "") {
+      writer.uint32(42).string(message.Denom);
     }
     return writer;
   },
@@ -47,19 +47,19 @@ export const Channel = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          message.index = reader.string();
+          message.Index = reader.string();
           break;
         case 2:
-          message.multisigAddr = reader.string();
+          message.MultisigAddr = reader.string();
           break;
         case 3:
-          message.partA = reader.string();
+          message.PartA = reader.string();
           break;
         case 4:
-          message.partB = reader.string();
+          message.PartB = reader.string();
           break;
         case 5:
-          message.denom = reader.string();
+          message.Denom = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
@@ -71,72 +71,76 @@ export const Channel = {
 
   fromJSON(object: any): Channel {
     const message = { ...baseChannel } as Channel;
-    if (object.index !== undefined && object.index !== null) {
-      message.index = String(object.index);
+    if (object.Index !== undefined && object.Index !== null) {
+      message.Index = String(object.Index);
     } else {
-      message.index = "";
+      message.Index = "";
     }
-    if (object.multisigAddr !== undefined && object.multisigAddr !== null) {
-      message.multisigAddr = String(object.multisigAddr);
+    if (object.MultisigAddr !== undefined && object.MultisigAddr !== null) {
+      message.MultisigAddr = String(object.MultisigAddr);
     } else {
-      message.multisigAddr = "";
+      message.MultisigAddr = "";
     }
-    if (object.partA !== undefined && object.partA !== null) {
-      message.partA = String(object.partA);
+    if (object.PartA !== undefined && object.PartA !== null) {
+      message.PartA = String(object.PartA);
     } else {
-      message.partA = "";
+      message.PartA = "";
     }
-    if (object.partB !== undefined && object.partB !== null) {
-      message.partB = String(object.partB);
+    if (object.PartB !== undefined && object.PartB !== null) {
+      message.PartB = String(object.PartB);
     } else {
-      message.partB = "";
+      message.PartB = "";
     }
-    if (object.denom !== undefined && object.denom !== null) {
-      message.denom = String(object.denom);
+    if (object.Denom !== undefined && object.Denom !== null) {
+      message.Denom = String(object.Denom);
     } else {
-      message.denom = "";
+      message.Denom = "";
     }
+
     return message;
   },
 
   toJSON(message: Channel): unknown {
     const obj: any = {};
+
     message.index !== undefined && (obj.index = message.index);
     message.multisigAddr !== undefined &&
       (obj.multisigAddr = message.multisigAddr);
     message.partA !== undefined && (obj.partA = message.partA);
     message.partB !== undefined && (obj.partB = message.partB);
     message.denom !== undefined && (obj.denom = message.denom);
+
     return obj;
   },
 
   fromPartial(object: DeepPartial<Channel>): Channel {
     const message = { ...baseChannel } as Channel;
-    if (object.index !== undefined && object.index !== null) {
-      message.index = object.index;
+    if (object.Index !== undefined && object.Index !== null) {
+      message.Index = object.Index;
     } else {
-      message.index = "";
+      message.Index = "";
     }
-    if (object.multisigAddr !== undefined && object.multisigAddr !== null) {
-      message.multisigAddr = object.multisigAddr;
+    if (object.MultisigAddr !== undefined && object.MultisigAddr !== null) {
+      message.MultisigAddr = object.MultisigAddr;
     } else {
-      message.multisigAddr = "";
+      message.MultisigAddr = "";
     }
-    if (object.partA !== undefined && object.partA !== null) {
-      message.partA = object.partA;
+    if (object.PartA !== undefined && object.PartA !== null) {
+      message.PartA = object.PartA;
     } else {
-      message.partA = "";
+      message.PartA = "";
     }
-    if (object.partB !== undefined && object.partB !== null) {
-      message.partB = object.partB;
+    if (object.PartB !== undefined && object.PartB !== null) {
+      message.PartB = object.PartB;
     } else {
-      message.partB = "";
+      message.PartB = "";
     }
-    if (object.denom !== undefined && object.denom !== null) {
-      message.denom = object.denom;
+    if (object.Denom !== undefined && object.Denom !== null) {
+      message.Denom = object.Denom;
     } else {
-      message.denom = "";
+      message.Denom = "";
     }
+
     return message;
   },
 };

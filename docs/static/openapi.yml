@@ -19,16 +19,21 @@ paths:
                 items:
                   type: object
                   properties:
-                    index:
+                    Index:
                       type: string
-                    multisigAddr:
+                    MultisigAddr:
                       type: string
-                    partA:
+                    PartA:
                       type: string
-                    partB:
+                    PartB:
                       type: string
-                    denom:
+                    Denom:
                       type: string
+<<<<<<< HEAD
+=======
+                    Sequence:
+                      type: string
+>>>>>>> master
               pagination:
                 type: object
                 properties:
@@ -136,16 +141,21 @@ paths:
               channel:
                 type: object
                 properties:
-                  index:
+                  Index:
                     type: string
-                  multisigAddr:
+                  MultisigAddr:
                     type: string
-                  partA:
+                  PartA:
                     type: string
-                  partB:
+                  PartB:
                     type: string
-                  denom:
+                  Denom:
                     type: string
+<<<<<<< HEAD
+=======
+                  Sequence:
+                    type: string
+>>>>>>> master
         default:
           description: An unexpected error response.
           schema:
@@ -186,11 +196,11 @@ paths:
                 items:
                   type: object
                   properties:
-                    index:
+                    Index:
                       type: string
-                    from:
+                    From:
                       type: string
-                    cointocreator:
+                    CoinToCreator:
                       type: object
                       properties:
                         denom:
@@ -205,11 +215,11 @@ paths:
                         custom method
 
                         signatures required by gogoproto.
-                    toTimelock:
+                    ToTimelockAddr:
                       type: string
-                    toHashlock:
+                    ToHashlockAddr:
                       type: string
-                    coinhtlc:
+                    CoinToHtlc:
                       type: object
                       properties:
                         denom:
@@ -224,12 +234,12 @@ paths:
                         custom method
 
                         signatures required by gogoproto.
-                    blockheight:
+                    Timelock:
                       type: string
                       format: uint64
-                    hashcode:
+                    Hashcode:
                       type: string
-                    channelid:
+                    ChannelID:
                       type: string
               pagination:
                 type: object
@@ -338,11 +348,11 @@ paths:
               commitment:
                 type: object
                 properties:
-                  index:
+                  Index:
                     type: string
-                  from:
+                  From:
                     type: string
-                  cointocreator:
+                  CoinToCreator:
                     type: object
                     properties:
                       denom:
@@ -357,11 +367,11 @@ paths:
                       custom method
 
                       signatures required by gogoproto.
-                  toTimelock:
+                  ToTimelockAddr:
                     type: string
-                  toHashlock:
+                  ToHashlockAddr:
                     type: string
-                  coinhtlc:
+                  CoinToHtlc:
                     type: object
                     properties:
                       denom:
@@ -376,12 +386,12 @@ paths:
                       custom method
 
                       signatures required by gogoproto.
-                  blockheight:
+                  Timelock:
                     type: string
                     format: uint64
-                  hashcode:
+                  Hashcode:
                     type: string
-                  channelid:
+                  ChannelID:
                     type: string
         default:
           description: An unexpected error response.
@@ -423,23 +433,23 @@ paths:
                 items:
                   type: object
                   properties:
-                    index:
+                    Index:
                       type: string
-                    channelid:
+                    ChannelID:
                       type: string
-                    sender:
+                    Sender:
                       type: string
-                    receiver:
+                    Receiver:
                       type: string
-                    hashcodedest:
+                    HashcodeDest:
                       type: string
-                    timelockreceiver:
+                    TimelockReceiver:
                       type: string
-                    timelocksender:
+                    TimelockSender:
                       type: string
-                    hashcodehtlc:
+                    HashcodeHtlc:
                       type: string
-                    coin:
+                    CoinTransfer:
                       type: object
                       properties:
                         denom:
@@ -454,7 +464,7 @@ paths:
                         custom method
 
                         signatures required by gogoproto.
-                    creator:
+                    Creator:
                       type: string
               pagination:
                 type: object
@@ -563,23 +573,23 @@ paths:
               fwdcommit:
                 type: object
                 properties:
-                  index:
+                  Index:
                     type: string
-                  channelid:
+                  ChannelID:
                     type: string
-                  sender:
+                  Sender:
                     type: string
-                  receiver:
+                  Receiver:
                     type: string
-                  hashcodedest:
+                  HashcodeDest:
                     type: string
-                  timelockreceiver:
+                  TimelockReceiver:
                     type: string
-                  timelocksender:
+                  TimelockSender:
                     type: string
-                  hashcodehtlc:
+                  HashcodeHtlc:
                     type: string
-                  coin:
+                  CoinTransfer:
                     type: object
                     properties:
                       denom:
@@ -594,7 +604,7 @@ paths:
                       custom method
 
                       signatures required by gogoproto.
-                  creator:
+                  Creator:
                     type: string
         default:
           description: An unexpected error response.
@@ -30833,24 +30843,29 @@ definitions:
   channel.channel.Channel:
     type: object
     properties:
-      index:
+      Index:
         type: string
-      multisigAddr:
+      MultisigAddr:
         type: string
-      partA:
+      PartA:
         type: string
-      partB:
+      PartB:
         type: string
-      denom:
+      Denom:
         type: string
+<<<<<<< HEAD
+=======
+      Sequence:
+        type: string
+>>>>>>> master
   channel.channel.Commitment:
     type: object
     properties:
-      index:
+      Index:
         type: string
-      from:
+      From:
         type: string
-      cointocreator:
+      CoinToCreator:
         type: object
         properties:
           denom:
@@ -30862,11 +30877,11 @@ definitions:
 
           NOTE: The amount field is an Int which implements the custom method
           signatures required by gogoproto.
-      toTimelock:
+      ToTimelockAddr:
         type: string
-      toHashlock:
+      ToHashlockAddr:
         type: string
-      coinhtlc:
+      CoinToHtlc:
         type: object
         properties:
           denom:
@@ -30878,33 +30893,33 @@ definitions:
 
           NOTE: The amount field is an Int which implements the custom method
           signatures required by gogoproto.
-      blockheight:
+      Timelock:
         type: string
         format: uint64
-      hashcode:
+      Hashcode:
         type: string
-      channelid:
+      ChannelID:
         type: string
   channel.channel.Fwdcommit:
     type: object
     properties:
-      index:
+      Index:
         type: string
-      channelid:
+      ChannelID:
         type: string
-      sender:
+      Sender:
         type: string
-      receiver:
+      Receiver:
         type: string
-      hashcodedest:
+      HashcodeDest:
         type: string
-      timelockreceiver:
+      TimelockReceiver:
         type: string
-      timelocksender:
+      TimelockSender:
         type: string
-      hashcodehtlc:
+      HashcodeHtlc:
         type: string
-      coin:
+      CoinTransfer:
         type: object
         properties:
           denom:
@@ -30916,45 +30931,45 @@ definitions:
 
           NOTE: The amount field is an Int which implements the custom method
           signatures required by gogoproto.
-      creator:
+      Creator:
         type: string
   channel.channel.MsgAcceptfundResponse:
     type: object
     properties:
-      index:
+      Index:
         type: string
   channel.channel.MsgCloseChannelResponse:
     type: object
   channel.channel.MsgCommitmentResponse:
     type: object
     properties:
-      index:
+      Index:
         type: string
   channel.channel.MsgFundResponse:
     type: object
     properties:
-      index:
+      Index:
         type: string
   channel.channel.MsgOpenChannelResponse:
     type: object
     properties:
-      index:
+      Index:
         type: string
   channel.channel.MsgReceivercommitResponse:
     type: object
     properties:
-      indexhtlc:
+      IndexHtlc:
         type: string
-      indextransfer:
+      IndexTransfer:
         type: string
   channel.channel.MsgReceiverwithdrawResponse:
     type: object
   channel.channel.MsgSendercommitResponse:
     type: object
     properties:
-      indexhtlc:
+      IndexHtlc:
         type: string
-      indextransfer:
+      IndexTransfer:
         type: string
   channel.channel.MsgSenderwithdrawhashlockResponse:
     type: object
@@ -30975,16 +30990,21 @@ definitions:
         items:
           type: object
           properties:
-            index:
+            Index:
               type: string
-            multisigAddr:
+            MultisigAddr:
               type: string
-            partA:
+            PartA:
               type: string
-            partB:
+            PartB:
               type: string
-            denom:
+            Denom:
               type: string
+<<<<<<< HEAD
+=======
+            Sequence:
+              type: string
+>>>>>>> master
       pagination:
         type: object
         properties:
@@ -31018,11 +31038,11 @@ definitions:
         items:
           type: object
           properties:
-            index:
+            Index:
               type: string
-            from:
+            From:
               type: string
-            cointocreator:
+            CoinToCreator:
               type: object
               properties:
                 denom:
@@ -31037,11 +31057,11 @@ definitions:
                 method
 
                 signatures required by gogoproto.
-            toTimelock:
+            ToTimelockAddr:
               type: string
-            toHashlock:
+            ToHashlockAddr:
               type: string
-            coinhtlc:
+            CoinToHtlc:
               type: object
               properties:
                 denom:
@@ -31056,12 +31076,12 @@ definitions:
                 method
 
                 signatures required by gogoproto.
-            blockheight:
+            Timelock:
               type: string
               format: uint64
-            hashcode:
+            Hashcode:
               type: string
-            channelid:
+            ChannelID:
               type: string
       pagination:
         type: object
@@ -31096,23 +31116,23 @@ definitions:
         items:
           type: object
           properties:
-            index:
+            Index:
               type: string
-            channelid:
+            ChannelID:
               type: string
-            sender:
+            Sender:
               type: string
-            receiver:
+            Receiver:
               type: string
-            hashcodedest:
+            HashcodeDest:
               type: string
-            timelockreceiver:
+            TimelockReceiver:
               type: string
-            timelocksender:
+            TimelockSender:
               type: string
-            hashcodehtlc:
+            HashcodeHtlc:
               type: string
-            coin:
+            CoinTransfer:
               type: object
               properties:
                 denom:
@@ -31127,7 +31147,7 @@ definitions:
                 method
 
                 signatures required by gogoproto.
-            creator:
+            Creator:
               type: string
       pagination:
         type: object
@@ -31160,27 +31180,32 @@ definitions:
       channel:
         type: object
         properties:
-          index:
+          Index:
             type: string
-          multisigAddr:
+          MultisigAddr:
             type: string
-          partA:
+          PartA:
             type: string
-          partB:
+          PartB:
             type: string
-          denom:
+          Denom:
             type: string
+<<<<<<< HEAD
+=======
+          Sequence:
+            type: string
+>>>>>>> master
   channel.channel.QueryGetCommitmentResponse:
     type: object
     properties:
       commitment:
         type: object
         properties:
-          index:
+          Index:
             type: string
-          from:
+          From:
             type: string
-          cointocreator:
+          CoinToCreator:
             type: object
             properties:
               denom:
@@ -31195,11 +31220,11 @@ definitions:
               method
 
               signatures required by gogoproto.
-          toTimelock:
+          ToTimelockAddr:
             type: string
-          toHashlock:
+          ToHashlockAddr:
             type: string
-          coinhtlc:
+          CoinToHtlc:
             type: object
             properties:
               denom:
@@ -31214,12 +31239,12 @@ definitions:
               method
 
               signatures required by gogoproto.
-          blockheight:
+          Timelock:
             type: string
             format: uint64
-          hashcode:
+          Hashcode:
             type: string
-          channelid:
+          ChannelID:
             type: string
   channel.channel.QueryGetFwdcommitResponse:
     type: object
@@ -31227,23 +31252,23 @@ definitions:
       fwdcommit:
         type: object
         properties:
-          index:
+          Index:
             type: string
-          channelid:
+          ChannelID:
             type: string
-          sender:
+          Sender:
             type: string
-          receiver:
+          Receiver:
             type: string
-          hashcodedest:
+          HashcodeDest:
             type: string
-          timelockreceiver:
+          TimelockReceiver:
             type: string
-          timelocksender:
+          TimelockSender:
             type: string
-          hashcodehtlc:
+          HashcodeHtlc:
             type: string
-          coin:
+          CoinTransfer:
             type: object
             properties:
               denom:
@@ -31258,7 +31283,7 @@ definitions:
               method
 
               signatures required by gogoproto.
-          creator:
+          Creator:
             type: string
   channel.channel.QueryParamsResponse:
     type: object

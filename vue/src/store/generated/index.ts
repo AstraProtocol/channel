@@ -5,7 +5,6 @@ import ChannelChannel from './channel.channel'
 
 export default { 
   ChannelChannel: load(ChannelChannel, 'channel.channel'),
-  
 }
 
 

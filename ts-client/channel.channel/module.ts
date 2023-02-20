@@ -7,6 +7,7 @@ import { msgTypes } from './registry';
 import { IgniteClient } from "../client"
 import { MissingWalletError } from "../helpers"
 import { Api } from "./rest";
+
 import { MsgWithdrawTimelock } from "./types/channel/tx";
 import { MsgWithdrawHashlock } from "./types/channel/tx";
 import { MsgSenderwithdrawtimelock } from "./types/channel/tx";
@@ -25,6 +26,7 @@ export { MsgWithdrawTimelock, MsgWithdrawHashlock, MsgSenderwithdrawtimelock, Ms
 
 type sendMsgWithdrawTimelockParams = {
   value: MsgWithdrawTimelock,
+
   fee?: StdFee,
   memo?: string
 };
@@ -161,7 +163,7 @@ interface TxClientOptions {
 export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "http://localhost:26657", prefix: "cosmos" }) => {
 
   return {
-		
+
 		async sendMsgWithdrawTimelock({ value, fee, memo }: sendMsgWithdrawTimelockParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgWithdrawTimelock: Unable to sign Tx. Signer is not present.')
@@ -259,7 +261,7 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				throw new Error('TxClient:sendMsgSenderwithdrawhashlock: Could not broadcast Tx: '+ e.message)
 			}
 		},
-		
+
 		async sendMsgCloseChannel({ value, fee, memo }: sendMsgCloseChannelParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgCloseChannel: Unable to sign Tx. Signer is not present.')
@@ -315,7 +317,7 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				throw new Error('TxClient:sendMsgSendercommit: Could not broadcast Tx: '+ e.message)
 			}
 		},
-		
+
 		async sendMsgCommitment({ value, fee, memo }: sendMsgCommitmentParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgCommitment: Unable to sign Tx. Signer is not present.')
@@ -330,7 +332,7 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 			}
 		},
 		
-		
+
 		msgWithdrawTimelock({ value }: msgWithdrawTimelockParams): EncodeObject {
 			try {
 				return { typeUrl: "/channel.channel.MsgWithdrawTimelock", value: MsgWithdrawTimelock.fromPartial( value ) }  
@@ -362,7 +364,7 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				throw new Error('TxClient:MsgAcceptfund: Could not create message: ' + e.message)
 			}
 		},
-		
+
 		msgFund({ value }: msgFundParams): EncodeObject {
 			try {
 				return { typeUrl: "/channel.channel.MsgFund", value: MsgFund.fromPartial( value ) }  
@@ -378,15 +380,15 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				throw new Error('TxClient:MsgReceiverwithdraw: Could not create message: ' + e.message)
 			}
 		},
-		
+
 		msgSenderwithdrawhashlock({ value }: msgSenderwithdrawhashlockParams): EncodeObject {
 			try {
-				return { typeUrl: "/channel.channel.MsgSenderwithdrawhashlock", value: MsgSenderwithdrawhashlock.fromPartial( value ) }  
+				return { typeUrl: "/channel.channel.MsgCloseChannel", value: MsgCloseChannel.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:MsgSenderwithdrawhashlock: Could not create message: ' + e.message)
+				throw new Error('TxClient:MsgCloseChannel: Could not create message: ' + e.message)
 			}
 		},
-		
+
 		msgCloseChannel({ value }: msgCloseChannelParams): EncodeObject {
 			try {
 				return { typeUrl: "/channel.channel.MsgCloseChannel", value: MsgCloseChannel.fromPartial( value ) }  
@@ -413,9 +415,9 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 		
 		msgSendercommit({ value }: msgSendercommitParams): EncodeObject {
 			try {
-				return { typeUrl: "/channel.channel.MsgSendercommit", value: MsgSendercommit.fromPartial( value ) }  
+				return { typeUrl: "/channel.channel.MsgSenderwithdrawtimelock", value: MsgSenderwithdrawtimelock.fromPartial( value ) }  
 			} catch (e: any) {
-				throw new Error('TxClient:MsgSendercommit: Could not create message: ' + e.message)
+				throw new Error('TxClient:MsgSenderwithdrawtimelock: Could not create message: ' + e.message)
 			}
 		},
 		
