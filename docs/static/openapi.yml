@@ -29,8 +29,11 @@ paths:
                       type: string
                     Denom:
                       type: string
+<<<<<<< HEAD
+=======
                     Sequence:
                       type: string
+>>>>>>> master
               pagination:
                 type: object
                 properties:
@@ -123,16 +126,6 @@ paths:
           in: query
           required: false
           type: boolean
-        - name: pagination.reverse
-          description: >-
-            reverse is set to true if results are to be returned in the
-            descending order.
-
-
-            Since: cosmos-sdk 0.43
-          in: query
-          required: false
-          type: boolean
       tags:
         - Query
   '/channel/channel/channel/{index}':
@@ -158,8 +151,11 @@ paths:
                     type: string
                   Denom:
                     type: string
+<<<<<<< HEAD
+=======
                   Sequence:
                     type: string
+>>>>>>> master
         default:
           description: An unexpected error response.
           schema:
@@ -334,16 +330,6 @@ paths:
             when key
 
             is set.
-          in: query
-          required: false
-          type: boolean
-        - name: pagination.reverse
-          description: >-
-            reverse is set to true if results are to be returned in the
-            descending order.
-
-
-            Since: cosmos-sdk 0.43
           in: query
           required: false
           type: boolean
@@ -569,16 +555,6 @@ paths:
             when key
 
             is set.
-          in: query
-          required: false
-          type: boolean
-        - name: pagination.reverse
-          description: >-
-            reverse is set to true if results are to be returned in the
-            descending order.
-
-
-            Since: cosmos-sdk 0.43
           in: query
           required: false
           type: boolean
@@ -30877,8 +30853,11 @@ definitions:
         type: string
       Denom:
         type: string
+<<<<<<< HEAD
+=======
       Sequence:
         type: string
+>>>>>>> master
   channel.channel.Commitment:
     type: object
     properties:
@@ -31021,8 +31000,11 @@ definitions:
               type: string
             Denom:
               type: string
+<<<<<<< HEAD
+=======
             Sequence:
               type: string
+>>>>>>> master
       pagination:
         type: object
         properties:
@@ -31208,8 +31190,11 @@ definitions:
             type: string
           Denom:
             type: string
+<<<<<<< HEAD
+=======
           Sequence:
             type: string
+>>>>>>> master
   channel.channel.QueryGetCommitmentResponse:
     type: object
     properties:

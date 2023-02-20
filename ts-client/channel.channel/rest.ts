@@ -10,12 +10,11 @@
  */
 
 export interface ChannelChannel {
-  Index?: string;
-  MultisigAddr?: string;
-  PartA?: string;
-  PartB?: string;
-  Denom?: string;
-  Sequence?: string;
+  index?: string;
+  multisigAddr?: string;
+  partA?: string;
+  partB?: string;
+  denom?: string;
 }
 
 export interface ChannelCommitment {

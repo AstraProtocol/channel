@@ -72,13 +72,12 @@ message MsgCloseChannelResponse {
 }
 
 message MsgOpenChannel {
-  string Creator = 1;
-  string PartA = 2;
-  string PartB = 3;
-  cosmos.base.v1beta1.Coin CoinA = 4;
-  cosmos.base.v1beta1.Coin CoinB = 5;
-  string MultisigAddr = 6;
-  string Sequence = 7;
+  string creator = 1;
+  string partA = 2;
+  string partB = 3;
+  cosmos.base.v1beta1.Coin coinA = 4;
+  cosmos.base.v1beta1.Coin coinB = 5;
+  string multisigAddr = 6;
 }
 
 message MsgOpenChannelResponse {

@@ -51,13 +51,12 @@ export interface MsgCloseChannel {
 export interface MsgCloseChannelResponse {}
 
 export interface MsgOpenChannel {
-  Creator: string;
-  PartA: string;
-  PartB: string;
-  CoinA: Coin | undefined;
-  CoinB: Coin | undefined;
-  MultisigAddr: string;
-  Sequence: string;
+  creator: string;
+  partA: string;
+  partB: string;
+  coinA: Coin | undefined;
+  coinB: Coin | undefined;
+  multisigAddr: string;
 }
 
 export interface MsgOpenChannelResponse {
@@ -946,11 +945,10 @@ export const MsgCloseChannelResponse = {
 };
 
 const baseMsgOpenChannel: object = {
-  Creator: "",
-  PartA: "",
-  PartB: "",
-  MultisigAddr: "",
-  Sequence: "",
+  creator: "",
+  partA: "",
+  partB: "",
+  multisigAddr: "",
 };
 
 export const MsgOpenChannel = {
@@ -972,9 +970,6 @@ export const MsgOpenChannel = {
     }
     if (message.MultisigAddr !== "") {
       writer.uint32(50).string(message.MultisigAddr);
-    }
-    if (message.Sequence !== "") {
-      writer.uint32(58).string(message.Sequence);
     }
     return writer;
   },
@@ -1003,9 +998,6 @@ export const MsgOpenChannel = {
           break;
         case 6:
           message.MultisigAddr = reader.string();
-          break;
-        case 7:
-          message.Sequence = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
@@ -1047,16 +1039,22 @@ export const MsgOpenChannel = {
     } else {
       message.MultisigAddr = "";
     }
-    if (object.Sequence !== undefined && object.Sequence !== null) {
-      message.Sequence = String(object.Sequence);
-    } else {
-      message.Sequence = "";
-    }
+
     return message;
   },
 
   toJSON(message: MsgOpenChannel): unknown {
     const obj: any = {};
+    message.creator !== undefined && (obj.creator = message.creator);
+    message.partA !== undefined && (obj.partA = message.partA);
+    message.partB !== undefined && (obj.partB = message.partB);
+    message.coinA !== undefined &&
+      (obj.coinA = message.coinA ? Coin.toJSON(message.coinA) : undefined);
+    message.coinB !== undefined &&
+      (obj.coinB = message.coinB ? Coin.toJSON(message.coinB) : undefined);
+    message.multisigAddr !== undefined &&
+      (obj.multisigAddr = message.multisigAddr);
+=======
     message.Creator !== undefined && (obj.Creator = message.Creator);
     message.PartA !== undefined && (obj.PartA = message.PartA);
     message.PartB !== undefined && (obj.PartB = message.PartB);
@@ -1067,6 +1065,7 @@ export const MsgOpenChannel = {
     message.MultisigAddr !== undefined &&
       (obj.MultisigAddr = message.MultisigAddr);
     message.Sequence !== undefined && (obj.Sequence = message.Sequence);
+>>>>>>> master
     return obj;
   },
 
@@ -1101,11 +1100,6 @@ export const MsgOpenChannel = {
       message.MultisigAddr = object.MultisigAddr;
     } else {
       message.MultisigAddr = "";
-    }
-    if (object.Sequence !== undefined && object.Sequence !== null) {
-      message.Sequence = object.Sequence;
-    } else {
-      message.Sequence = "";
     }
     return message;
   },

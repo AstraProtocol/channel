@@ -4,21 +4,19 @@ import { Writer, Reader } from "protobufjs/minimal";
 export const protobufPackage = "channel.channel";
 
 export interface Channel {
-  Index: string;
-  MultisigAddr: string;
-  PartA: string;
-  PartB: string;
-  Denom: string;
-  Sequence: string;
+  index: string;
+  multisigAddr: string;
+  partA: string;
+  partB: string;
+  denom: string;
 }
 
 const baseChannel: object = {
-  Index: "",
-  MultisigAddr: "",
-  PartA: "",
-  PartB: "",
-  Denom: "",
-  Sequence: "",
+  index: "",
+  multisigAddr: "",
+  partA: "",
+  partB: "",
+  denom: "",
 };
 
 export const Channel = {
@@ -37,9 +35,6 @@ export const Channel = {
     }
     if (message.Denom !== "") {
       writer.uint32(42).string(message.Denom);
-    }
-    if (message.Sequence !== "") {
-      writer.uint32(50).string(message.Sequence);
     }
     return writer;
   },
@@ -65,9 +60,6 @@ export const Channel = {
           break;
         case 5:
           message.Denom = reader.string();
-          break;
-        case 6:
-          message.Sequence = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
@@ -104,23 +96,20 @@ export const Channel = {
     } else {
       message.Denom = "";
     }
-    if (object.Sequence !== undefined && object.Sequence !== null) {
-      message.Sequence = String(object.Sequence);
-    } else {
-      message.Sequence = "";
-    }
+
     return message;
   },
 
   toJSON(message: Channel): unknown {
     const obj: any = {};
-    message.Index !== undefined && (obj.Index = message.Index);
-    message.MultisigAddr !== undefined &&
-      (obj.MultisigAddr = message.MultisigAddr);
-    message.PartA !== undefined && (obj.PartA = message.PartA);
-    message.PartB !== undefined && (obj.PartB = message.PartB);
-    message.Denom !== undefined && (obj.Denom = message.Denom);
-    message.Sequence !== undefined && (obj.Sequence = message.Sequence);
+
+    message.index !== undefined && (obj.index = message.index);
+    message.multisigAddr !== undefined &&
+      (obj.multisigAddr = message.multisigAddr);
+    message.partA !== undefined && (obj.partA = message.partA);
+    message.partB !== undefined && (obj.partB = message.partB);
+    message.denom !== undefined && (obj.denom = message.denom);
+
     return obj;
   },
 
@@ -151,11 +140,7 @@ export const Channel = {
     } else {
       message.Denom = "";
     }
-    if (object.Sequence !== undefined && object.Sequence !== null) {
-      message.Sequence = object.Sequence;
-    } else {
-      message.Sequence = "";
-    }
+
     return message;
   },
 };
